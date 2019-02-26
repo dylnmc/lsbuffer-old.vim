@@ -22,7 +22,7 @@
 "   don't forget you can use <c-w>f to open the file in a split
 "   you can :lcd to anywhere in the lsbuffer, and it will re-ls the new directory
 
-nnoremap <silent> <expr> gf isdirectory(expand('<cfile>')) ? 'call lsbuffer#ls(expand(''<cfile>'')<cr>' : 'gf'
+nnoremap <silent> <expr> gf isdirectory(expand(expand('<cfile>'))) ? 'call lsbuffer#ls(expand(''<cfile>'')<cr>' : 'gf'
 nnoremap <silent> <leader>ls :call lsbuffer#ls()<cr>
 nnoremap <silent> <leader>lS :call lsbuffer#ls(getcwd())<cr>
 command! -bar -bang -nargs=? LsHidden let s:lshidden = (<bang>s:lshidden || strlen(<q-args>) && str2nr(<q-args>)) | unsilent echon (s:lshidden ? 'dot files are SHOWN' : 'dot files are HIDDEN') | if (<bang>0 || ! empty(<q-args>)) | if len(filter(range(1, winnr('$')), { _,wn -> bufname(winbufnr(wn)) ==# 'lsbuffer' })) | call lsbuffer#ls() | endif | endif
