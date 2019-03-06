@@ -16,8 +16,6 @@ use these maps/commands anywhere
 | `:LsHidden 0` | *hide* dot files                                                                              |
 | `:LsHidden!`  | *toggle* showing dot files                                                                    |
 | `:LsHidden`   | prints out state                                                                              |
-| `<leader>lh`  | same as `:LsHidden!` for convenience                                                          |
-| `<leader>lc`  | types `:lcd %:p:h/` and awaits a `<cr>`
 
 ## lsbuffer usage
 
@@ -31,6 +29,14 @@ use these mappings inside the lsbuffer buffer
 | `<bs>`      | lcd ..                               |
 | `h`         | same as <bs>                         |
 | `-`         | lcd to previous directory            |
+| `cd`        | type `:silent lcd `                  |
+
+## recommended mappings
+
+| map/command  | description                             |
+| ---          | ---                                     |
+| `<leader>lh` | same as `:LsHidden!` for convenience    |
+| `<leader>lc` | types `:lcd %:p:h/` and awaits a `<cr>` |
 
 ## notes
 
